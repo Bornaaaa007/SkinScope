@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinScope — Diagnosis Result</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/vaiables.css">
+  <link rel="stylesheet" href="css/result.css">
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <a class="logo" href="index.html">Skin<span>Scope</span></a>
+    <div class="nav-links">
+      <a class="back-btn" href="dashboard.html">← Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="page-layout">
+    <div class="page-header">
+      <div class="breadcrumb">Dashboard → Diagnose → Result</div>
+      <h1>Your Diagnosis Result</h1>
+      <p>Based on your skin photo, here are the detected concerns and your personalized routine.</p>
+    </div>
+
+    <!-- Result banner (filled in dynamically by js/result.js from the ML backend response) -->
+    <div class="result-header">
+      <div class="result-header-info">
+        <h2>Skin Analysis Complete</h2>
+        <p id="resultSummary">Loading your results…</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+          <span class="tag tag-rose" id="skinTypeTag">—</span>
+          <span class="tag" style="background:rgba(255,255,255,0.2);color:#fff;">Analyzed: Today</span>
+        </div>
+      </div>
+      <div class="result-score">
+        <div class="score-circle">
+          <div class="num" id="scoreNum">--</div>
+          <div class="lbl">SCORE</div>
+        </div>
+        <div style="font-size:11px; opacity:0.7; margin-top:4px;">Skin Health</div>
+      </div>
+    </div>
+
+    <!-- Detected problems (populated by js/result.js) -->
+    <p class="section-label" style="margin-bottom:16px;">🔍 Detected Skin Problems</p>
+    <div class="problems-grid" id="problemsGrid">
+      <!-- problem-card elements are inserted here by JavaScript -->
+    </div>
+
+    <!-- Generated Routine -->
+    <div class="card">
+      <p class="section-label">📋 Your Personalized Routine</p>
+
+      <div class="routine-tabs">
+        <button class="tab-btn active" onclick="switchTab('morning', this)">🌅 Morning Routine</button>
+        <button class="tab-btn" onclick="switchTab('night', this)">🌙 Night Routine</button>
+      </div>
+      <!-- Morning Routine (populated by js/result.js from the real diagnosis) -->
+      <div class="routine-panel active" id="panel-morning">
+      </div>
+      <!-- Night Routine (populated by js/result.js from the real diagnosis) -->
+      <div class="routine-panel" id="panel-night">
+      </div>
+    </div>
+
+    <!-- Recommended for you (populated by js/result.js) -->
+    <div class="card" id="recommendedCard" style="display:none;">
+      <p class="section-label">🛍 Recommended For You</p>
+      <div id="recommendedList"></div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="btn-row">
+      <button class="btn-primary" onclick="saveRoutine()">💾 Save Routine</button>
+      <a class="btn-outline" href="products.html">🛍 View Recommended Products</a>
+      <button class="btn-outline" onclick="generateDetailed()">📄 Generate Detailed Routine</button>
+      <a class="btn-outline" href="dashboard.html">← Back to Dashboard</a>
+    </div>
+
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/result.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinCare Scope — Profile Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="logo">Skin<span>Scope</span></div>
+    <div class="nav-links">
+      <a class="nav-btn" href="index.html">Login</a>
+      <a class="nav-btn active" href="profile.html">Profile Setup</a>
+      <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="page active" id="page-profile">
+    <div class="profile-layout">
+      <div class="step-bar">
+        <div class="step-dot done">✓</div>
+        <div class="step-line"></div>
+        <div class="step-dot active">2</div>
+        <div class="step-line"></div>
+        <div class="step-dot pending">3</div>
+      </div>
+      <h2 class="section-heading">Set up your skin profile</h2>
+      <p class="section-note">This helps us personalize your diagnosis and recommendations. You can update this anytime.</p>
+
+      <h3 class="sub-label">Select your skin type</h3>
+      <div class="type-grid">
+        <div class="type-card" onclick="selectType(this)">
+          <div class="type-icon">💧</div>
+          <div class="type-name">Normal</div>
+          <div class="type-desc">Balanced, clear</div>
+        </div>
+        <div class="type-card" onclick="selectType(this)">
+          <div class="type-icon">✨</div>
+          <div class="type-name">Oily</div>
+          <div class="type-desc">Shiny, enlarged pores</div>
+        </div>
+        <div class="type-card" onclick="selectType(this)">
+          <div class="type-icon">🍂</div>
+          <div class="type-name">Dry</div>
+          <div class="type-desc">Flaky, tight feeling</div>
+        </div>
+        <div class="type-card" onclick="selectType(this)">
+          <div class="type-icon">⚖️</div>
+          <div class="type-name">Combo</div>
+          <div class="type-desc">Oily T-zone, dry cheeks</div>
+        </div>
+        <div class="type-card" onclick="selectType(this)">
+          <div class="type-icon">🌸</div>
+          <div class="type-name">Sensitive</div>
+          <div class="type-desc">Reactive, redness</div>
+        </div>
+      </div>
+
+      <h3 class="sub-label">Select your skin concerns</h3>
+      <div class="concern-grid">
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Acne &amp; Breakouts</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Dark Spots</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Wrinkles &amp; Fine Lines</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Redness &amp; Irritation</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Uneven Texture</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Dullness &amp; Fatigue</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Dark Circles</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Pore Visibility</div>
+        <div class="concern-chip" onclick="toggleConcern(this)"><div class="check">✓</div> Hyperpigmentation</div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn-primary" href="dashboard.html" style="text-align:center; text-decoration:none; display:inline-block; line-height:40px; padding:0 24px;">Save Profile &amp; Continue →</a>
+        <a class="btn-skip" href="dashboard.html">Skip for now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

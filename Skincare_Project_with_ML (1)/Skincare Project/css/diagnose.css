@@ -1,0 +1,104 @@
+/* ─────────────────────────────────────────
+   SKINSCOPE — diagnose.css
+   ───────────────────────────────────────── */
+
+/* Upload area */
+.upload-area {
+  border: 2px dashed var(--border);
+  border-radius: 16px;
+  padding: 56px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--input-bg);
+  position: relative;
+}
+.upload-area:hover,
+.upload-area.drag-over {
+  border-color: var(--rose);
+  background: #FFF4EF;
+}
+.upload-icon { font-size: 48px; margin-bottom: 16px; }
+.upload-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600; margin-bottom: 8px; color: var(--dark);
+}
+.upload-sub { font-size: 14px; color: var(--light-text); margin-bottom: 24px; }
+.upload-input { display: none; }
+
+/* OR divider */
+.or-divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 24px 0; color: var(--light-text); font-size: 13px;
+}
+.or-divider::before,
+.or-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+/* Camera capture */
+.camera-btn {
+  width: 100%; padding: 14px;
+  background: var(--warm-white); border: 1.5px solid var(--border);
+  border-radius: 10px; font-family: 'DM Sans', sans-serif;
+  font-size: 14px; color: var(--mid); cursor: pointer;
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.camera-btn:hover { border-color: var(--rose); color: var(--deep-rose); }
+
+/* Preview area */
+.preview-area {
+  display: none;
+  margin-top: 24px;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border); position: relative;
+}
+.preview-area.show { display: block; }
+.preview-area img {
+  width: 100%; max-height: 360px; object-fit: cover; display: block;
+}
+.preview-overlay {
+  position: absolute; top: 12px; right: 12px;
+  display: flex; gap: 8px;
+}
+.preview-overlay button {
+  background: rgba(255,255,255,0.9); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 12px; font-size: 12px;
+  cursor: pointer; transition: all 0.2s;
+}
+.preview-overlay button:hover { background: #fff; }
+
+/* Tips sidebar */
+.diagnose-grid {
+  display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start;
+}
+.tips-card { position: sticky; top: 88px; }
+.tip-item {
+  display: flex; gap: 12px; padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tip-item:last-child { border-bottom: none; }
+.tip-num {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: #FFF0EA; color: var(--deep-rose);
+  font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.tip-text { font-size: 13px; color: var(--mid); line-height: 1.55; }
+
+/* Loading state */
+.analyze-loading {
+  display: none; text-align: center; padding: 32px;
+}
+.analyze-loading.show { display: block; }
+.spinner {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 3px solid var(--border); border-top-color: var(--deep-rose);
+  animation: spin 0.8s linear infinite; margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) {
+  .diagnose-grid { grid-template-columns: 1fr; }
+  .tips-card { position: static; }
+}

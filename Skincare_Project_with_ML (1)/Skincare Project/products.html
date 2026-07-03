@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinScope — Product Recommendations</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/vaiables.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <a class="logo" href="index.html">Skin<span>Scope</span></a>
+    <div class="nav-links">
+      <a class="back-btn" href="dashboard.html">← Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="page-layout wide">
+    <div class="page-header">
+      <div class="breadcrumb">Dashboard → Product Recommendations</div>
+      <h1>Recommended Products</h1>
+      <p>Products curated specifically for your skin type and diagnosed concerns.</p>
+    </div>
+
+    <!-- Skin match banner -->
+    <div class="match-banner">
+      <div class="icon">✨</div>
+      <div>
+        <h3>Matched to your skin: Combination · Acne-Prone</h3>
+        <p>These products are selected based on your skin diagnosis and profile. Ingredients are verified as safe for
+          your skin type.</p>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <span class="filter-chip active" onclick="filterProducts('all', this)">All Products</span>
+      <span class="filter-chip" onclick="filterProducts('cleanser', this)">Cleansers</span>
+      <span class="filter-chip" onclick="filterProducts('moisturizer', this)">Moisturizers</span>
+      <span class="filter-chip" onclick="filterProducts('serum', this)">Serums</span>
+      <span class="filter-chip" onclick="filterProducts('sunscreen', this)">Sunscreens</span>
+      <span class="filter-chip" onclick="filterProducts('toner', this)">Toners</span>
+    </div>
+
+    <!-- Cleansers -->
+    <div class="category-section" data-category="cleanser">
+      <div class="category-title"><span class="cat-icon">🧴</span> Cleansers</div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">🧴</div>
+          <div class="product-body">
+            <div class="product-name">CeraVe Foaming Cleanser</div>
+            <div class="product-brand">CeraVe</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Gentle</span>
+              <span class="tag tag-blue">Non-comedogenic</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳850</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('CeraVe Foaming Cleanser')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'CeraVe Foaming Cleanser')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">🫧</div>
+          <div class="product-body">
+            <div class="product-name">La Roche-Posay Effaclar Gel</div>
+            <div class="product-brand">La Roche-Posay</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Acne-Safe</span>
+              <span class="tag tag-rose">Salicylic Acid</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳1,200</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Effaclar Gel')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Effaclar Gel')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">💧</div>
+          <div class="product-body">
+            <div class="product-name">Neutrogena Oil-Free Cleanser</div>
+            <div class="product-brand">Neutrogena</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Oil-Free</span>
+              <span class="tag tag-blue">Dermatologist Tested</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳650</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Neutrogena Cleanser')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Neutrogena Cleanser')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Serums -->
+    <div class="category-section" data-category="serum">
+      <div class="category-title"><span class="cat-icon">💉</span> Serums</div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">🔬</div>
+          <div class="product-body">
+            <div class="product-name">The Ordinary Niacinamide 10%</div>
+            <div class="product-brand">The Ordinary</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Pore Minimizing</span>
+              <span class="tag tag-rose">Bestseller</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳900</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Niacinamide 10%')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Niacinamide 10%')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">⚗️</div>
+          <div class="product-body">
+            <div class="product-name">Vitamin C 15% Serum</div>
+            <div class="product-brand">Minimalist</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Brightening</span>
+              <span class="tag tag-blue">Anti-Oxidant</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳750</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Vitamin C Serum')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Vitamin C Serum')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">🌿</div>
+          <div class="product-body">
+            <div class="product-name">Hyaluronic Acid 2% + B5</div>
+            <div class="product-brand">The Ordinary</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Hydrating</span>
+              <span class="tag tag-blue">Plumping</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳850</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Hyaluronic Acid')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Hyaluronic Acid')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Moisturizers -->
+    <div class="category-section" data-category="moisturizer">
+      <div class="category-title"><span class="cat-icon">🍯</span> Moisturizers</div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">🫙</div>
+          <div class="product-body">
+            <div class="product-name">CeraVe PM Facial Moisturizer</div>
+            <div class="product-brand">CeraVe</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Oil-Free</span>
+              <span class="tag tag-blue">Ceramides</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳1,100</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('CeraVe PM')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'CeraVe PM')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">💆</div>
+          <div class="product-body">
+            <div class="product-name">Neutrogena Hydro Boost Gel</div>
+            <div class="product-brand">Neutrogena</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Gel Formula</span>
+              <span class="tag tag-rose">Combo Skin</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳980</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Hydro Boost')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Hydro Boost')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">🌸</div>
+          <div class="product-body">
+            <div class="product-name">Simple Kind to Skin Moisturiser</div>
+            <div class="product-brand">Simple</div>
+            <div class="product-tags">
+              <span class="tag tag-green">Fragrance-Free</span>
+              <span class="tag tag-blue">Sensitive-Safe</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳720</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Simple Moisturiser')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Simple Moisturiser')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sunscreens -->
+    <div class="category-section" data-category="sunscreen">
+      <div class="category-title"><span class="cat-icon">☀️</span> Sunscreens</div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">☀️</div>
+          <div class="product-body">
+            <div class="product-name">Altruist SPF 50 Sunscreen</div>
+            <div class="product-brand">Altruist</div>
+            <div class="product-tags">
+              <span class="tag tag-green">SPF 50</span>
+              <span class="tag tag-blue">Lightweight</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳550</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Altruist SPF50')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Altruist SPF50')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">🌤</div>
+          <div class="product-body">
+            <div class="product-name">La Roche-Posay Anthelios SPF 50+</div>
+            <div class="product-brand">La Roche-Posay</div>
+            <div class="product-tags">
+              <span class="tag tag-green">SPF 50+</span>
+              <span class="tag tag-rose">Dermatologist Pick</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">৳1,800</div>
+              <div style="display:flex; gap:6px;">
+                <button class="details-btn" onclick="viewDetails('Anthelios SPF50+')">Details</button>
+                <button class="add-btn" onclick="addToRoutine(this, 'Anthelios SPF50+')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn-outline" href="routine.html">📋 View Routine Tracker</a>
+      <a class="btn-outline" href="dashboard.html">← Back to Dashboard</a>
+    </div>
+
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/products.js"></script>
+</body>
+
+</html>

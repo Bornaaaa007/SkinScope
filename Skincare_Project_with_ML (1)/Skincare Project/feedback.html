@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinScope — Feedback</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/vaiables.css">
+  <link rel="stylesheet" href="css/feedback.css">
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <a class="logo" href="index.html">Skin<span>Scope</span></a>
+    <div class="nav-links">
+      <a class="back-btn" href="dashboard.html">← Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="feedback-layout">
+
+    <!-- Form state -->
+    <div id="feedbackForm">
+
+      <div class="page-header">
+        <div class="breadcrumb">Dashboard → Feedback</div>
+        <h1>Share Your Feedback</h1>
+        <p>Your feedback helps us improve the AI model and make SkinScope better for everyone.</p>
+      </div>
+
+      <!-- Overall rating -->
+      <div class="card" style="margin-bottom: 20px;">
+        <p class="section-label">⭐️ Overall Experience</p>
+        <div class="star-row" id="starRow">
+          <span class="star" onclick="setRating(1)" onmouseover="hoverRating(1)" onmouseout="resetHover()">⭐️</span>
+          <span class="star" onclick="setRating(2)" onmouseover="hoverRating(2)" onmouseout="resetHover()">⭐️</span>
+          <span class="star" onclick="setRating(3)" onmouseover="hoverRating(3)" onmouseout="resetHover()">⭐️</span>
+          <span class="star" onclick="setRating(4)" onmouseover="hoverRating(4)" onmouseout="resetHover()">⭐️</span>
+          <span class="star" onclick="setRating(5)" onmouseover="hoverRating(5)" onmouseout="resetHover()">⭐️</span>
+        </div>
+        <div class="rating-label" id="ratingLabel">Click a star to rate your experience</div>
+      </div>
+
+      <!-- Feature ratings -->
+      <div class="card" style="margin-bottom: 20px;">
+        <p class="section-label">📊 Rate Each Feature</p>
+        <div class="feature-ratings">
+
+          <div class="feature-item">
+            <span class="feature-name">Skin Diagnosis Accuracy</span>
+            <div class="mini-stars" data-feature="diagnosis">
+              <span class="mini-star" onclick="setFeatureRating('diagnosis', 1)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('diagnosis', 2)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('diagnosis', 3)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('diagnosis', 4)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('diagnosis', 5)">⭐️</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-name">Routine Recommendations</span>
+            <div class="mini-stars" data-feature="routine">
+              <span class="mini-star" onclick="setFeatureRating('routine', 1)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('routine', 2)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('routine', 3)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('routine', 4)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('routine', 5)">⭐️</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-name">Ingredient Analyzer</span>
+            <div class="mini-stars" data-feature="ingredients">
+              <span class="mini-star" onclick="setFeatureRating('ingredients', 1)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ingredients', 2)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ingredients', 3)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ingredients', 4)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ingredients', 5)">⭐️</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-name">Product Recommendations</span>
+            <div class="mini-stars" data-feature="products">
+              <span class="mini-star" onclick="setFeatureRating('products', 1)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('products', 2)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('products', 3)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('products', 4)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('products', 5)">⭐️</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-name">Overall UI & Ease of Use</span>
+            <div class="mini-stars" data-feature="ui">
+              <span class="mini-star" onclick="setFeatureRating('ui', 1)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ui', 2)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ui', 3)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ui', 4)">⭐️</span>
+              <span class="mini-star" onclick="setFeatureRating('ui', 5)">⭐️</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Conflict / issue flag -->
+      <div class="conflict-banner">
+        <div class="conflict-icon">⚠️</div>
+        <div class="conflict-info">
+          <h4>Did you notice any issues with your routine?</h4>
+          <p>If any recommended products caused irritation or conflict, let us know so we can update the AI model and
+            suggest safer alternatives.</p>
+          <div class="conflict-tags" id="conflictTags">
+            <span class="tag tag-yellow" style="cursor:pointer;" onclick="toggleConflict(this)">Skin Irritation</span>
+            <span class="tag tag-yellow" style="cursor:pointer;" onclick="toggleConflict(this)">Wrong Skin Type</span>
+            <span class="tag tag-yellow" style="cursor:pointer;" onclick="toggleConflict(this)">Product Conflict</span>
+            <span class="tag tag-yellow" style="cursor:pointer;" onclick="toggleConflict(this)">Inaccurate
+              Diagnosis</span>
+            <span class="tag tag-yellow" style="cursor:pointer;" onclick="toggleConflict(this)">No Issues</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Written comments -->
+      <div class="card" style="margin-bottom: 20px;">
+        <p class="section-label">💬 Additional Comments</p>
+        <div class="field-wrap" style="margin-bottom: 16px;">
+          <label>What did you like most?</label>
+          <textarea class="input-field" id="likedComment"
+            placeholder="e.g. The ingredient analyzer was really helpful and easy to use..."></textarea>
+        </div>
+        <div class="field-wrap" style="margin-bottom: 0;">
+          <label>What can we improve?</label>
+          <textarea class="input-field" id="improveComment"
+            placeholder="e.g. The diagnosis could be more accurate for darker skin tones..."></textarea>
+        </div>
+      </div>
+
+      <!-- Safe routine suggestion -->
+      <div class="card" style="margin-bottom: 24px; background: #F2F9F3; border-color: #B8DEC0;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="font-size: 22px;">🛡</span>
+          <div>
+            <p style="font-weight: 500; font-size: 15px; margin-bottom: 4px; color: var(--dark);">Safe Routine
+              Suggestion</p>
+            <p style="font-size: 13px; color: var(--mid); line-height: 1.6;">
+              Based on your feedback, our AI will automatically review your routine and suggest safer product
+              combinations. Any flagged conflicts will be resolved in your next diagnosis.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Submit -->
+      <button class="btn-primary full" onclick="submitFeedback()" style="font-size: 15px; padding: 16px;">
+        📤 Submit Feedback
+      </button>
+      <div style="text-align: center; margin-top: 12px;">
+        <a class="btn-ghost" href="dashboard.html">Skip for now</a>
+      </div>
+
+    </div>
+
+    <!-- Success state (shown after submit) -->
+    <div class="success-state" id="successState">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">Thank you for your feedback!</div>
+      <p class="success-sub">
+        Your response has been recorded and will be used to improve the SkinScope AI model.
+        We'll update your routine recommendations based on your input.
+      </p>
+      <a class="btn-primary" href="dashboard.html" style="display:inline-flex; text-decoration:none;">← Back to
+        Dashboard</a>
+    </div>
+
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/feedback.js"></script>
+</body>
+
+</html>

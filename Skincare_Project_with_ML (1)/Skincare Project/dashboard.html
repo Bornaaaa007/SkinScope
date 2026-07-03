@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinScope — Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a class="logo" href="index.html" style="text-decoration:none;">Skin<span>Scope</span></a>
+    <div class="nav-links">
+      <a class="nav-btn" href="index.html">Login</a>
+      <a class="nav-btn" href="profile.html">Profile Setup</a>
+      <a class="nav-btn active" href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="dashboard-layout">
+
+    <div class="dash-header">
+      <div class="dash-greeting">
+        <div class="hey">Good morning,</div>
+        <div class="name">Shamima <span>!!!</span></div>
+      </div>
+      <div class="dash-badge">
+        <span class="dot"></span> Profile Active &middot; Combination Skin
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">78</div>
+        <div class="stat-label">Skin Health Score</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Day Streak</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Saved Products</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Diagnoses Done</div>
+      </div>
+    </div>
+
+    <div class="skin-summary">
+      <div class="skin-summary-left">
+        <h3>Your skin summary</h3>
+        <p>Based on your last diagnosis, your skin showed mild acne tendencies with uneven texture. Your morning routine is 80% complete today.</p>
+        <div class="skin-tags">
+          <span class="skin-tag">Combination</span>
+          <span class="skin-tag">Mild Acne</span>
+          <span class="skin-tag">Uneven Texture</span>
+          <span class="skin-tag">Low Sensitivity</span>
+        </div>
+      </div>
+      <div class="skin-score">
+        <div class="score-ring">
+          <div class="score-num">78</div>
+        </div>
+        <div class="score-label">Skin Health Score</div>
+      </div>
+    </div>
+
+    <p class="section-title">What would you like to do?</p>
+    <div class="dash-grid">
+
+      <a class="dash-card" href="diagnose.html" style="text-decoration: none; color: inherit;">
+        <div class="card-icon-wrap">🔬</div>
+        <div class="card-title">Diagnose Skin</div>
+        <div class="card-desc">Upload or capture a photo for AI-powered skin problem detection</div>
+        <span class="card-badge badge-new">AI</span>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a class="dash-card" href="routine.html" style="text-decoration: none; color: inherit;">
+        <div class="card-icon-wrap">📋</div>
+        <div class="card-title">Routine Tracker</div>
+        <div class="card-desc">Track your morning and night skincare routine steps daily</div>
+        <span class="card-badge badge-soon">Coming Soon</span>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a class="dash-card" href="products.html" style="text-decoration: none; color: inherit;">
+        <div class="card-icon-wrap">🛍</div>
+        <div class="card-title">Product Recs</div>
+        <div class="card-desc">Curated products matched to your specific skin type and concerns</div>
+        <span class="card-badge badge-soon">Coming Soon</span>
+        <div class="card-arrow">→</div>
+      </a>
+      <a class="dash-card" href="ingredients.html" style="text-decoration: none; color: inherit;">
+        <div class="card-icon-wrap">🧪</div>
+        <div class="card-title">Ingredient Analyzer</div>
+        <div class="card-desc">Check for harsh chemicals, conflicts, and safer alternatives</div>
+        <span class="card-badge badge-new">AI</span>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a class="dash-card" href="result.html" style="text-decoration: none; color: inherit;">
+        <div class="card-icon-wrap">📊</div>
+        <div class="card-title">My Results</div>
+        <div class="card-desc">View your past diagnoses, generated routines and skin progress</div>
+        <span class="card-badge badge-soon">Coming Soon</span>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a class="dash-card" href="feedback.html" style="text-decoration: none; color: inherit;">
+        <div class="card-icon-wrap">💬</div>
+        <div class="card-title">Feedback</div>
+        <div class="card-desc">Rate your experience and help improve the SkinScope AI model</div>
+        <span class="card-badge badge-soon">Coming Soon</span>
+        <div class="card-arrow">→</div>
+      </a>
+
+    </div>
+
+    <p class="section-title">Recent Activity</p>
+    <div class="recent-grid">
+      <div class="recent-card">
+        <div class="recent-icon-wrap">🔬</div>
+        <div class="recent-info">
+          <div class="label">Last Diagnosis</div>
+          <div class="value">Mild acne detected · 2 days ago</div>
+        </div>
+        <span class="recent-status status-good">Done</span>
+      </div>
+      <div class="recent-card">
+        <div class="recent-icon-wrap">📋</div>
+        <div class="recent-info">
+          <div class="label">Today's Routine</div>
+          <div class="value">Morning: 4 of 5 steps done</div>
+        </div>
+        <span class="recent-status status-pending">In Progress</span>
+      </div>
+      <div class="recent-card">
+        <div class="recent-icon-wrap">🧪</div>
+        <div class="recent-info">
+          <div class="label">Ingredient Check</div>
+          <div class="value">Niacinamide Serum · Safe</div>
+        </div>
+        <span class="recent-status status-good">Safe</span>
+      </div>
+      <div class="recent-card">
+        <div class="recent-icon-wrap">🛍</div>
+        <div class="recent-info">
+          <div class="label">Saved Products</div>
+          <div class="value">3 products in your wishlist</div>
+        </div>
+        <span class="recent-status status-good">3 Items</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

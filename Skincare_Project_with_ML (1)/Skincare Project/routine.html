@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinScope — Routine Tracker</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/vaiables.css">
+  <link rel="stylesheet" href="css/routine.css">
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <a class="logo" href="index.html">Skin<span>Scope</span></a>
+    <div class="nav-links">
+      <a class="back-btn" href="dashboard.html">← Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="page-layout wide">
+    <div class="page-header">
+      <div class="breadcrumb">Dashboard → Routine Tracker</div>
+      <h1>Routine Tracker</h1>
+      <p>Check off your skincare steps each day and track your consistency over time.</p>
+    </div>
+
+    <div class="routine-layout">
+
+      <!-- Left: Checklist -->
+      <div>
+        <!-- AM / PM tabs -->
+        <div class="routine-tabs">
+          <button class="routine-tab active" onclick="switchRoutine('morning', this)">🌅 Morning Routine</button>
+          <button class="routine-tab" onclick="switchRoutine('night', this)">🌙 Night Routine</button>
+        </div>
+
+        <!-- Morning checklist -->
+        <div class="routine-panel active" id="panel-morning">
+          <div class="checklist" id="checklist-morning">
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Gentle Foaming Cleanser</div>
+                <div class="checklist-note">CeraVe Foaming Cleanser · Wash for 60 seconds</div>
+              </div>
+              <div class="checklist-time">2 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Niacinamide Toner</div>
+                <div class="checklist-note">The Ordinary · Apply with cotton pad</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Vitamin C Serum</div>
+                <div class="checklist-note">Minimalist 15% · 3–4 drops on face and neck</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Oil-Free Moisturizer</div>
+                <div class="checklist-note">Neutrogena Hydro Boost · Lightweight layer</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">SPF 50 Sunscreen</div>
+                <div class="checklist-note">Altruist SPF 50 · Last step, apply generously</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+          </div>
+
+          <div class="btn-row" style="margin-top: 24px;">
+            <button class="btn-primary" onclick="markAllDone('morning')">✓ Mark All Done</button>
+            <button class="btn-outline" onclick="resetRoutine('morning')">↺ Reset</button>
+          </div>
+        </div>
+
+        <!-- Night checklist -->
+        <div class="routine-panel" id="panel-night">
+          <div class="checklist" id="checklist-night">
+           <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Micellar Water / Oil Cleanse</div>
+                <div class="checklist-note">First cleanse · Remove sunscreen and pollution</div>
+              </div>
+              <div class="checklist-time">2 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Salicylic Acid Cleanser</div>
+                <div class="checklist-note">Second cleanse · Unclog pores, prevent breakouts</div>
+              </div>
+              <div class="checklist-time">2 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Niacinamide Serum</div>
+                <div class="checklist-note">The Ordinary 10% · All over face and neck</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Retinol (2–3x per week)</div>
+                <div class="checklist-note">Start low, 0.1% · Avoid eye area</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleStep(this)">
+              <div class="checklist-checkbox">✓</div>
+              <div class="checklist-info">
+                <div class="checklist-name">Night Cream / Sleeping Mask</div>
+                <div class="checklist-note">CeraVe PM · Lock in moisture overnight</div>
+              </div>
+              <div class="checklist-time">1 min</div>
+            </div>
+
+          </div>
+
+          <div class="btn-row" style="margin-top: 24px;">
+            <button class="btn-primary" onclick="markAllDone('night')">✓ Mark All Done</button>
+            <button class="btn-outline" onclick="resetRoutine('night')">↺ Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Progress sidebar -->
+      <div>
+        <div class="card progress-card">
+          <div class="progress-title">Today's Progress</div>
+
+          <!-- Donut chart -->
+          <div class="donut-wrap">
+            <svg class="donut-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#E8D8CC" stroke-width="10" />
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#9B5E45" stroke-width="10" stroke-dasharray="0 239"
+                stroke-dashoffset="60" stroke-linecap="round" id="donutCircle"
+                style="transition: stroke-dasharray 0.6s ease; transform: rotate(-90deg); transform-origin: center;" />
+            </svg>
+            <div class="donut-center">
+              <div class="donut-pct" id="donutPct">0%</div>
+              <div class="donut-lbl">done</div>
+            </div>
+          </div> 
+        <!-- Stats -->
+          <div class="streak-row">
+            <span class="streak-label">🔥 Current Streak</span>
+            <span class="streak-value">5 days</span>
+          </div>
+          <div class="streak-row">
+            <span class="streak-label">📅 Best Streak</span>
+            <span class="streak-value">12 days</span>
+          </div>
+          <div class="streak-row">
+            <span class="streak-label">✅ This Week</span>
+            <span class="streak-value" id="weekCount">0 / 7</span>
+          </div>
+          <div class="streak-row">
+            <span class="streak-label">🕐 AM Done</span>
+            <span class="streak-value" id="amProgress">0 / 5</span>
+          </div>
+          <div class="streak-row">
+            <span class="streak-label">🌙 PM Done</span>
+            <span class="streak-value" id="pmProgress">0 / 5</span>
+          </div>
+
+          <!-- Week strip -->
+          <div style="margin-top: 20px;">
+            <p class="section-label" style="margin-bottom: 12px;">This Week</p>
+            <div class="week-strip">
+              <div class="day-cell">
+                <div class="day-name">Mon</div>
+                <div class="day-dot done">✓</div>
+              </div>
+              <div class="day-cell">
+                <div class="day-name">Tue</div>
+                <div class="day-dot done">✓</div>
+              </div>
+              <div class="day-cell">
+                <div class="day-name">Wed</div>
+                <div class="day-dot partial">~</div>
+              </div>
+              <div class="day-cell">
+                <div class="day-name">Thu</div>
+                <div class="day-dot done">✓</div>
+              </div>
+              <div class="day-cell">
+                <div class="day-name">Fri</div>
+                <div class="day-dot done">✓</div>
+              </div>
+              <div class="day-cell">
+                <div class="day-name">Sat</div>
+                <div class="day-dot today" id="todayDot">·</div>
+              </div>
+              <div class="day-cell">
+                <div class="day-name">Sun</div>
+                <div class="day-dot missed">–</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row" style="margin-top: 20px;">
+            <button class="btn-outline full" onclick="viewHistory()">📊 View Full History</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/routine.js"></script>
+</body>
+
+</html>  

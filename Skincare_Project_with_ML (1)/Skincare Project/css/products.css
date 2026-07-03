@@ -1,0 +1,81 @@
+/* ─────────────────────────────────────────
+   SKINSCOPE — products.css
+   ───────────────────────────────────────── */
+
+/* Filter bar */
+.filter-bar {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;
+}
+.filter-chip {
+  padding: 8px 18px; border-radius: 20px; border: 1.5px solid var(--border);
+  background: var(--warm-white); font-size: 13px; color: var(--mid);
+  cursor: pointer; transition: all 0.2s;
+}
+.filter-chip:hover { border-color: var(--rose); }
+.filter-chip.active {
+  background: var(--deep-rose); color: #fff; border-color: var(--deep-rose);
+}
+
+/* Skin match banner */
+.match-banner {
+  background: linear-gradient(135deg, var(--deep-rose), var(--terracotta));
+  border-radius: 16px; padding: 20px 24px; color: #fff;
+  display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
+}
+.match-banner .icon { font-size: 28px; }
+.match-banner h3 { font-size: 16px; font-weight: 500; margin-bottom: 3px; }
+.match-banner p  { font-size: 13px; opacity: 0.8; }
+
+/* Category section */
+.category-section { margin-bottom: 36px; }
+.category-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.category-title .cat-icon { font-size: 20px; }
+
+/* Product cards */
+.products-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.product-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden; transition: all 0.25s;
+}
+.product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+
+.product-img {
+  height: 130px; background: linear-gradient(135deg, #F9EDE4, #EFD9CC);
+  display: flex; align-items: center; justify-content: center; font-size: 48px;
+}
+.product-body { padding: 16px; }
+.product-name { font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+.product-brand { font-size: 12px; color: var(--light-text); margin-bottom: 8px; }
+.product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.product-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+.product-price { font-size: 15px; font-weight: 600; color: var(--deep-rose); }
+
+.add-btn {
+  padding: 8px 14px; background: var(--deep-rose); color: #fff;
+  border: none; border-radius: 8px; font-size: 12px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+}
+.add-btn:hover { background: var(--dark); }
+.add-btn.added { background: var(--sage); }
+
+.details-btn {
+  padding: 8px 14px; background: transparent;
+  border: 1px solid var(--border); border-radius: 8px;
+  font-size: 12px; color: var(--mid); cursor: pointer; transition: all 0.2s;
+}
+.details-btn:hover { border-color: var(--rose); color: var(--rose); }
+
+@media (max-width: 900px) {
+  .products-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .products-grid { grid-template-columns: 1fr; }
+}

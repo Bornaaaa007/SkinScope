@@ -1,0 +1,66 @@
+/* ─────────────────────────────────────────
+   SKINSCOPE — feedback.css
+   ───────────────────────────────────────── */
+
+.feedback-layout {
+  max-width: 680px; margin: 0 auto; padding: 44px 40px 60px;
+}
+
+/* Star rating */
+.star-row {
+  display: flex; gap: 10px; margin-bottom: 28px;
+}
+.star {
+  font-size: 38px; cursor: pointer;
+  filter: grayscale(1); transition: all 0.15s;
+  user-select: none;
+}
+.star:hover,
+.star.active {
+  filter: grayscale(0); transform: scale(1.15);
+}
+
+/* Rating labels */
+.rating-label {
+  font-size: 14px; color: var(--light-text); margin-top: 8px; min-height: 20px;
+}
+
+/* Feature ratings */
+.feature-ratings { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+.feature-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.feature-name { font-size: 14px; color: var(--dark); flex: 1; }
+.mini-stars { display: flex; gap: 5px; }
+.mini-star {
+  font-size: 20px; cursor: pointer; filter: grayscale(1); transition: all 0.15s;
+}
+.mini-star:hover, .mini-star.active { filter: grayscale(0); }
+
+/* Conflict section */
+.conflict-banner {
+  background: #FFF8F0; border: 1px solid #F5D9B5;
+  border-radius: 14px; padding: 20px 22px; margin-bottom: 28px;
+  display: flex; gap: 14px;
+}
+.conflict-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.conflict-info h4 { font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+.conflict-info p  { font-size: 13px; color: var(--mid); line-height: 1.6; }
+.conflict-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
+/* Success state */
+.success-state {
+  display: none; text-align: center; padding: 48px 20px;
+}
+.success-state.show { display: block; }
+.success-icon { font-size: 60px; margin-bottom: 16px; }
+.success-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 600; margin-bottom: 8px;
+}
+.success-sub { font-size: 14px; color: var(--light-text); margin-bottom: 28px; line-height: 1.6; }
+
+@media (max-width: 480px) {
+  .feedback-layout { padding: 28px 20px 48px; }
+  .star { font-size: 32px; }
+}

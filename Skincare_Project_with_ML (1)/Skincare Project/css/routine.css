@@ -1,0 +1,106 @@
+/* ─────────────────────────────────────────
+   SKINSCOPE — routine.css
+   ───────────────────────────────────────── */
+
+/* Routine layout */
+.routine-layout {
+  display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start;
+}
+
+/* Tab switcher */
+.routine-tabs {
+  display: flex; gap: 4px; margin-bottom: 24px;
+  background: var(--input-bg); border-radius: 12px; padding: 4px;
+  border: 1px solid var(--border);
+}
+.routine-tab {
+  flex: 1; padding: 11px; border: none; border-radius: 9px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  cursor: pointer; transition: all 0.2s; background: transparent; color: var(--mid);
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+}
+.routine-tab.active { background: #fff; color: var(--deep-rose); box-shadow: var(--shadow); font-weight: 500; }
+
+.routine-panel { display: none; }
+.routine-panel.active { display: block; }
+
+/* Checklist items */
+.checklist { display: flex; flex-direction: column; gap: 10px; }
+.checklist-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; border-radius: 12px;
+  border: 1.5px solid var(--border); background: var(--card-bg);
+  cursor: pointer; transition: all 0.2s;
+}
+.checklist-item:hover { border-color: var(--rose); }
+.checklist-item.done {
+  border-color: var(--sage); background: #F2F9F3;
+}
+.checklist-checkbox {
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 2px solid var(--border); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; transition: all 0.2s; color: transparent;
+}
+.checklist-item.done .checklist-checkbox {
+  background: var(--sage); border-color: var(--sage); color: #fff;
+}
+.checklist-info { flex: 1; }
+.checklist-name { font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 2px; }
+.checklist-item.done .checklist-name { text-decoration: line-through; color: var(--light-text); }
+.checklist-note { font-size: 12px; color: var(--light-text); }
+.checklist-time {
+  font-size: 12px; color: var(--light-text);
+  background: var(--input-bg); padding: 4px 10px; border-radius: 20px;
+}
+
+/* Progress card (sidebar) */
+.progress-card { position: sticky; top: 88px; }
+.progress-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600; margin-bottom: 20px;
+}
+
+/* Donut chart */
+.donut-wrap { text-align: center; margin-bottom: 24px; position: relative; }
+.donut-svg { width: 140px; height: 140px; }
+.donut-center {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.donut-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 600; color: var(--deep-rose); line-height: 1;
+}
+.donut-lbl { font-size: 11px; color: var(--light-text); }
+
+.streak-row {
+  display: flex; justify-content: space-between;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.streak-row:last-child { border-bottom: none; }
+.streak-label { font-size: 13px; color: var(--light-text); }
+.streak-value { font-size: 14px; font-weight: 600; color: var(--dark); }
+
+/* Calendar week strip */
+.week-strip {
+  display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; margin: 20px 0;
+}
+.day-cell {
+  text-align: center; padding: 6px 4px; border-radius: 8px;
+}
+.day-cell .day-name { font-size: 10px; color: var(--light-text); margin-bottom: 6px; }
+.day-dot {
+  width: 28px; height: 28px; border-radius: 50%; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; font-size: 11px;
+}
+.day-dot.done     { background: var(--sage); color: #fff; }
+.day-dot.partial  { background: #FFF0EA; color: var(--deep-rose); border: 1px solid var(--blush); }
+.day-dot.missed   { background: var(--border); color: var(--light-text); }
+.day-dot.today    { background: var(--deep-rose); color: #fff; font-weight: 600; }
+
+@media (max-width: 768px) {
+  .routine-layout { grid-template-columns: 1fr; }
+  .progress-card { position: static; }
+}

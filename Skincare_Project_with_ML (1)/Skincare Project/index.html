@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinCare Scope — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="logo">Skin<span>Scope</span></div>
+    <div class="nav-links">
+      <a class="nav-btn active" href="index.html">Login</a>
+      <a class="nav-btn" href="profile.html">Profile Setup</a>
+      <a class="nav-btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="page active" id="page-login">
+    <div class="split-layout">
+      <div class="left-panel">
+        <div class="left-deco-circle"></div>
+        <div class="panel-tagline">Your skin,<br><em>understood.</em></div>
+        <p class="panel-sub">Personalized skincare powered by intelligent analysis. Know exactly what your skin needs, every day.</p>
+        <div class="panel-pills">
+          <span class="pill">AI Diagnosis</span>
+          <span class="pill">Ingredient Safety</span>
+          <span class="pill">Routine Builder</span>
+          <span class="pill">Progress Tracking</span>
+        </div>
+      </div>
+      <div class="right-panel">
+        <h1 class="form-title">Welcome back</h1>
+        <p class="form-subtitle">Sign in to continue your skincare journey</p>
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@example.com" id="login-email">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password" id="login-pass">
+        </div>
+        
+        <a class="btn-primary" href="profile.html" style="text-align:center; text-decoration:none; display:block; line-height:40px;">Sign In</a>
+        <a class="btn-secondary" href="profile.html" style="text-align:center; text-decoration:none; display:block; line-height:40px;">Create an account</a>
+        
+        <div style="text-align:center; margin-top:16px;">
+          <button class="btn-ghost">Forgot password?</button>
+        </div>
+        <div class="divider">or sign in with</div>
+        <div style="display:flex; gap:12px;">
+          <button class="btn-secondary" style="margin-top:0; flex:1; display:flex; align-items:center; justify-content:center; gap:8px;">
+            <span>🔵</span> Google
+          </button>
+          <button class="btn-secondary" style="margin-top:0; flex:1; display:flex; align-items:center; justify-content:center; gap:8px;">
+            <span>⬛️</span> Apple
+          </button>
+        </div>
+        <p class="link-row">New here? <a href="profile.html">Create your free account →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="notif" id="notif"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
